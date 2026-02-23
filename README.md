@@ -22,7 +22,7 @@ The system processes and exports the following metrics for each text corpus:
 * **TF-IDF:** The relevance of a word in a specific document relative to the entire collection.
 * **Balanced Score:** A custom mathematical metric defined as $\log(CF + 1) \cdot DF^2$, ideal for finding highly recurrent and evenly distributed keywords.
 
-## 📐 Architecture & Design Patterns
+## Architecture & Design Patterns
 
 The code is structured to be highly scalable and maintainable, applying SOLID principles:
 
@@ -67,7 +67,7 @@ Upon running the program, you will be greeted by a terminal menu:
 * **[5/6] Compute Metrics:** Calculate all mathematical formulas and export them to your desired format (JSON for debugging, Msgpack for performance).
 * **[7/8] Visualization Interface:** Open the interactive Graphical User Interface (GUI).
 
-## 🖥️ Graphical Interface (GUI)
+## Graphical Interface (GUI)
 
 Options 7 and 8 will open an interactive window where you can:
 
