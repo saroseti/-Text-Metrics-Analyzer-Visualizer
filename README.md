@@ -1,8 +1,8 @@
-# 📊 Text Metrics Analyzer & Visualizer
+# Text Metrics Analyzer & Visualizer
 
 An advanced, high-performance tool for text corpus analysis, Natural Language Processing (NLP) metrics calculation, and interactive data visualization. It extracts text from books (PDF/EPUB), processes word frequencies, and enables deep visual exploration through an interactive graphical interface.
 
-## ✨ Key Features
+## Key Features
 
 * **Robust Text Extraction:** Converts PDF and EPUB files to plain text using PyMuPDF.
 * **Storage Efficiency:** Data serialization in `.msgpack` format for high-speed processing, alongside `.json` for human readability.
@@ -11,7 +11,7 @@ An advanced, high-performance tool for text corpus analysis, Natural Language Pr
 * **Automatic Book Classifier:** Groups documents into categories (Mathematics, Physics, Chemistry, Programming) by analyzing the TF-IDF scores of specific keywords.
 * **Clean Software Architecture:** Implemented using a hybrid MVC (Model-View-Controller) architecture for the console flow and MVP (Model-View-Presenter) for the graphical visualization.
 
-## 🧮 Calculated Metrics
+## Calculated Metrics
 
 The system processes and exports the following metrics for each text corpus:
 
@@ -30,7 +30,7 @@ The code is structured to be highly scalable and maintainable, applying SOLID pr
 * **Strategy Pattern:** Used in data serialization (`JsonStrategy`, `MsgpackStrategy`), allowing the swap of save/load algorithms at runtime.
 * **Facade Pattern:** `TextAnalysisModel` acts as a facade that hides the complexity of mathematical calculations and file conversions from the Controller.
 
-## 🚀 Installation and Dependencies
+## Installation and Dependencies
 
 **1. Clone the repository**
 ```bash
@@ -58,7 +58,7 @@ pip install -r requirements.txt
 python MAIN.py
 ```
 
-## 🎮 Interactive Menu Guide
+## Interactive Menu Guide
 
 Upon running the program, you will be greeted by a terminal menu:
 
@@ -77,7 +77,7 @@ Options 7 and 8 will open an interactive window where you can:
 * Define the number of variables to display using the "Show Top:" text box (e.g., Top 300 words).
 * Navigate through massive datasets using the smart bottom Scrollbar (automatically activates when the bar chart gets too large).
 
-## 📂 Project Structure
+## Project Structure
 
 ```text
 📁 text-metrics-analyzer/
@@ -96,7 +96,7 @@ Options 7 and 8 will open an interactive window where you can:
     └── RESULTS...       # Exported global metrics
 ```
 
-## 🛠️ Roadmap (Next Steps)
+## Roadmap (Next Steps)
 
 - [ ] Multithreading/Multiprocessing support for massive book collections.
 - [ ] Advanced, customizable Stop-Words filter.
