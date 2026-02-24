@@ -18,7 +18,7 @@ The system processes and exports the following metrics for each text corpus:
 * **TF (Term Frequency):** Frequency of terms per individual document.
 * **CF (Collection Frequency):** Total frequency of a term across the entire book collection.
 * **DF (Document Frequency):** Number of documents in which a specific term appears.
-* **IDF (Inverse Document Frequency):** A measure of how much information a word provides, calculated as $\log(N / DF)$.
+* **IDF (Inverse Document Frequency):** A measure of how much information a word provides, calculated as $\log( N / DF )$.
 * **TF-IDF:** The relevance of a word in a specific document relative to the entire collection.
 * **Balanced Score:** A custom mathematical metric defined as $\log(CF + 1) \cdot DF^2$, ideal for finding highly recurrent and evenly distributed keywords.
 
