@@ -254,7 +254,7 @@ class MetricsCalculator:
 # ==============================================================================
 # 6. BOOK CLUSTERER 
 # ==============================================================================
-
+class BookClusterer:
     """Identifies book categories based on TF-IDF scores of predefined keywords."""
     def __init__(self, view, file_manager, paths):
         self.view = view
@@ -342,5 +342,6 @@ class TextAnalysisModel:
     def get_book_categories(self, export_format):
         # The presenter will call this method directly. No need for console messages here.
         return self.clusterer.categorize_books(export_format)
+
 
 
