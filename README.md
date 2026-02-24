@@ -30,7 +30,6 @@ The code is structured to be highly scalable and maintainable, applying SOLID pr
 * **Strategy Pattern:** Used in data serialization (`JsonStrategy`, `MsgpackStrategy`), allowing the swap of save/load algorithms at runtime.
 * **Facade Pattern:** `TextAnalysisModel` acts as a facade that hides the complexity of mathematical calculations and file conversions from the Controller.
 
-## Installation and Dependencies
 
 **1. Clone the repository**
 ```bash
