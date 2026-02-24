@@ -1,4 +1,4 @@
-# MODEL.py
+# model.py
 
 import os
 import re
@@ -342,4 +342,5 @@ class TextAnalysisModel:
     def get_book_categories(self, export_format):
         # The presenter will call this method directly. No need for console messages here.
         return self.clusterer.categorize_books(export_format)
+
 
