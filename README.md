@@ -26,7 +26,7 @@ The system processes and exports the following metrics for each text corpus:
 
 The code is structured to be highly scalable and maintainable, applying SOLID principles:
 
-* **MVC & MVP:** The CLI flow uses Model-View-Controller, while the complex visualization window delegates its interface to a Model-View-Presenter to isolate UI state logic (`PRESENTER.py`).
+* **MVC & MVP:** The CLI flow uses Model-View-Controller, while the complex visualization window delegates its interface to a Model-View-Presenter to isolate UI state logic (`presenter.py`).
 * **Strategy Pattern:** Used in data serialization (`JsonStrategy`, `MsgpackStrategy`), allowing the swap of save/load algorithms at runtime.
 * **Facade Pattern:** `TextAnalysisModel` acts as a facade that hides the complexity of mathematical calculations and file conversions from the Controller.
 
@@ -55,7 +55,7 @@ pip install -r requirements.txt
 **3. Run the application**
 
 ```bash
-python MAIN.py
+python main.py
 ```
 
 ## Interactive Menu Guide
@@ -82,11 +82,11 @@ Options 7 and 8 will open an interactive window where you can:
 ```text
 📁 text-metrics-analyzer/
 │
-├── MAIN.py              # Application entry point
-├── CONTROLLER.py        # Routing and program flow control (MVC)
-├── MODEL.py             # Business logic, math, read/write ops (Facade)
-├── VIEW.py              # Console interface and Matplotlib UI setup
-├── PRESENTER.py         # Logical orchestrator for the GUI (MVP)
+├── main.py              # Application entry point
+├── controller.py        # Routing and program flow control (MVC)
+├── model.py             # Business logic, math, read/write ops (Facade)
+├── view.py              # Console interface and Matplotlib UI setup
+├── presenter.py         # Logical orchestrator for the GUI (MVP)
 ├── requirements.txt     # Project dependencies
 │
 └── 📁 DATA/             # (Automatically generated folder)
