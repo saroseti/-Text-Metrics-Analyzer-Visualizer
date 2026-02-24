@@ -1,7 +1,8 @@
-# MAIN.py
+# main.py
 
-from CONTROLLER import AnalysisController
+from controller import AnalysisController
 
 if __name__ == "__main__":
     app = AnalysisController()
     app.run()
+
