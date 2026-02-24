@@ -1,4 +1,4 @@
-# VIEW.py
+# view.py
 import os
 import matplotlib.pyplot as plt
 from matplotlib.widgets import CheckButtons, RadioButtons, TextBox, Slider
@@ -192,3 +192,4 @@ class VisualizationView:
             self.ax_main.set_xlim(start_index - 0.5, end_index - 0.5)
         
         self.fig.canvas.draw_idle()
+
