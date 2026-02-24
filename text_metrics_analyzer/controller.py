@@ -1,8 +1,8 @@
 # controller.py
 
-from MODEL import TextAnalysisModel
-from VIEW import AnalysisView, VisualizationView
-from PRESENTER import VisualizationPresenter
+from model import TextAnalysisModel
+from view import AnalysisView, VisualizationView
+from presenter import VisualizationPresenter
 import os
 import time
 
@@ -105,4 +105,5 @@ class AnalysisController:
         """Calculates and displays the elapsed time for an operation."""
         elapsed_time = time.time() - start_time
         self.analysis_view.display_message(f"\n[SUCCESS] Total operation time: {elapsed_time:.2f} seconds.")
+
 
