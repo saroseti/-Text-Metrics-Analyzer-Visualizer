@@ -76,7 +76,7 @@ class FileManager:
         return self._strategy.extension
 
 # ==============================================================================
-# 3. TEXT & DOCUMENT PROCESSORS (Unchanged)
+# 3. TEXT & DOCUMENT PROCESSORS 
 # ==============================================================================
 class TextProcessor:
     @staticmethod
@@ -138,7 +138,7 @@ class DocumentConverter:
             self.view.display_progress(i, len(txt_files), f"Packed to msgpack: {os.path.basename(msgpack_path)}")
 
 # ==============================================================================
-# 5. METRICS CALCULATOR (Slightly modified to use new FileManager method)
+# 5. METRICS CALCULATOR
 # ==============================================================================
 class MetricsCalculator:
     def __init__(self, view, file_manager, paths):
@@ -207,7 +207,6 @@ class MetricsCalculator:
                 self.view.display_progress(i, len(source_files), f"TF calculated for: {os.path.basename(target_path)}")
     
     def _calculate_cf(self, tf_files, tf_dir):
-        # ... (implementation is correct, no changes needed)
         self.view.display_message("\n--- Phase 2: Calculating Collection Frequency (CF) ---")
         self.cf.clear()
         for i, filename in enumerate(tf_files, 1):
@@ -216,7 +215,6 @@ class MetricsCalculator:
             self.view.display_progress(i, len(tf_files), f"Aggregating CF from: {filename}")
 
     def _calculate_df(self, tf_files, tf_dir):
-        # ... (implementation is correct, no changes needed)
         self.view.display_message("\n--- Phase 3: Calculating Document Frequency (DF) ---")
         self.df.clear()
         for i, filename in enumerate(tf_files, 1):
@@ -225,13 +223,11 @@ class MetricsCalculator:
             self.view.display_progress(i, len(tf_files), f"Aggregating DF from: {filename}")
 
     def _calculate_idf(self, total_docs):
-        # ... (implementation is correct, no changes needed)
         self.view.display_message("\n--- Phase 4: Calculating Inverse Document Frequency (IDF) ---")
         self.idf = {word: round(log(total_docs / df_count), 4) for word, df_count in self.df.items() if df_count > 0}
         self.view.display_message(f"IDF calculated for {len(self.idf)} unique words.")
 
     def _calculate_and_save_tfidf(self, tf_files, tf_dir, tfidf_dir):
-        # ... (implementation is correct, no changes needed)
         self.view.display_message(f"\n--- Phase 5: Calculating and Saving TF-IDF to {os.path.basename(tfidf_dir)} ---")
         for i, filename in enumerate(tf_files, 1):
             tf_data = self.file_manager.load(os.path.join(tf_dir, filename), {})
@@ -241,7 +237,6 @@ class MetricsCalculator:
             self.view.display_progress(i, len(tf_files), f"Saved TF-IDF for: {doc_name}{self.file_manager.extension}")
 
     def _calculate_balanced_score(self):
-        # ... (implementation is correct, no changes needed)
         self.view.display_message("\n--- Phase 6: Calculating Balanced Score ---")
         self.balanced_scores = {word: round(log(self.cf[word] + 1) * (self.df[word] ** 2), 4) for word in self.cf}
         self.view.display_message("Balanced Score calculated for the entire vocabulary.")
@@ -257,9 +252,9 @@ class MetricsCalculator:
         self.view.display_message("\n>>> All metrics successfully calculated and exported! <<<")
 
 # ==============================================================================
-# 6. BOOK CLUSTERER (New Component)
+# 6. BOOK CLUSTERER 
 # ==============================================================================
-class BookClusterer:
+
     """Identifies book categories based on TF-IDF scores of predefined keywords."""
     def __init__(self, view, file_manager, paths):
         self.view = view
@@ -347,3 +342,4 @@ class TextAnalysisModel:
     def get_book_categories(self, export_format):
         # The presenter will call this method directly. No need for console messages here.
         return self.clusterer.categorize_books(export_format)
+
